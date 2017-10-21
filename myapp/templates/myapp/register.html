@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Register Here</title>
+</head>
+<style>
+body{
+background-color:lightblue;
+}
+</style>
+
+{% block content %}
+  <h1>Registration form </h1>
+
+  <form action="{% url 'myapp:register' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create the account">
+  </form>
+{% endblock %}

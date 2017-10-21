@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+ <h2><b>Course Detail Page</b></h2>
+	<ul>
+		    
+            <li> COURSE NO:&nbsp;&nbsp;&nbsp;&nbsp;{{ course.course_no }}</li>
+			<li>TITLE OF THE COURSE:&nbsp;&nbsp;&nbsp;{{ course.title }} </li>
+			<li>TEXTBOOK FOR THE COURSE:&nbsp;&nbsp;&nbsp;{{ course.textbook }}</li>
+			<li>INSTRUCTOR FOR THE COURSE:&nbsp;&nbsp;&nbsp;<a href="{% url 'myapp:instructor' course.instructor_id %}">{{ course.instructor}}</a></li>
+			
+     
+    </ul>
+  
+
+{% endblock %}
+<a href="{% url 'myapp:instructor' instructor.user.user_id %}">{{ course.instructor}}</a>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+        <title>Course Registration APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+<style>
+h2{
+text-decoration: underline;
+}
+
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: 		#B2FF99;
+}
+
+/* mouse over link */
+a:hover {
+    color: #d0e4fe;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;}
+</style>
+
+    <body>
+       <div>
+         {% if user.is_authenticated %}
+        
+           <p class="hbar2"> <a href = "{% url 'myapp:user_logout' %}"> Logout</a></p>
+           <p class="hbar2"><a href = "{% url 'myapp:mycourses' %}">My Courses</a><br/></p>
+           <p class="hbar2"><a href = "{% url 'myapp:mystudents' %}">My Students</a><br/></p>
+           </div>
+            <h1 align="center-left">{% block myhdg %}Hello 
+            {{ user.first_name }} 
+            {% endblock %}</h1>
+            
+            {% block body_block %}*** {% endblock %}
+        
+        <hr />
+        <div>
+            <ul>
+                <li class="hbar1"><a href="/myapp/about">Find out about this site</a></li>
+                <li class="hbar1"><a href = "{% url 'myapp:index' %}">Click here to return to main page</a><br/></li>
+				 <li class="hbar1"><a href = "{% url 'myapp:topics' %}">Explore Topics</a><br/></li>
+				 	
+            </ul>
+        </div>
+          {% else %}
+         
+        <div id="aa">
+            <ul>
+				 <li class="hbar2", color= white><a href = "{% url 'myapp:user_login' %}">Login</a><br/></li>
+            </ul>
+        </div>  
+        {% endif %}
+        <hr /><br><br>
+		
+		        
+			
+    </body>
+</html>

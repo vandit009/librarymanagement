@@ -1,0 +1,35 @@
+body{
+	    background-repeat: no-repeat;
+background-image: url("imag.jpg");background-size: 1350px 1000px;
+background-color: white ; 
+font-size: 20px;
+color: white;
+text-align: left;
+}
+ul{list-style: none;
+}
+
+
+
+.hbar1{
+	float: left;
+    width: 300px;
+    padding: 10px;
+}
+
+p.hbar2{
+	float:right;
+    width: 150px;
+    padding: 5px;
+    display:inline;
+}
+	
+}
+
+
+
+h2{font-size:30px; color:white;text-decoration: underline; text:center;}
+h1{font-size:40px;  align:center; 
+color: lightblue;
+}
+

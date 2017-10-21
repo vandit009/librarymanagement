@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+        <title>Course Registration APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <style>
+body{
+font:25px;
+marquee-direction:right-side;
+}
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #B2FF99;
+}
+
+/* mouse over link */
+a:hover {
+    color: #d0e4fe;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;}
+
+</style>
+
+    <body>
+        <div>
+            <h1 align="center">{% block myhdg %}UNIVERSITY OF WINDSOR COURSE APP {% endblock %}</h1>
+            <marquee>{% block body_block %}{{hi}} !!!! {% endblock %}</marquee>
+        </div>
+        <hr />
+        <div>
+            <ul>
+                <li class="hbar1" ><a href = "{% url 'myapp:user_login' %}">Login</a><br/></li>
+				<li class="hbar1"><a href="/myapp/about">Find out about this site</a></li>
+				<li class="hbar1"><a href="/myapp/register">Register</a></li>
+				
+				
+            </ul>
+        </div>
+    </body>
+</html>

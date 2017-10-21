@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+ <h2><b>Topic Detail Page</b></h2>
+	<ul>
+		    
+            <li> Subject:&nbsp;&nbsp;&nbsp;&nbsp;{{ topic.subject }}</li>
+			<li>Number of people Interested:&nbsp;&nbsp;&nbsp;{{ topic.num_responses }} </li>
+			<li>&nbsp;&nbsp;&nbsp;{{ topic.intro_course}}</li>
+			<li> Average Age:&nbsp;&nbsp;&nbsp;&nbsp;{{ topic.avg_age }}</li>  
+    </ul>
+    
+<form action="{% url 'myapp:topicdetail' topic.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+
+<a href="{% url 'myapp:addtopic' %}">Add topic</a>
+
+
+{% endblock %}
